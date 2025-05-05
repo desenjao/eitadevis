@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alavancagem Digital - Bota teu negócio no topo, oxe!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
@@ -30,162 +30,189 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.15;
+            opacity: 0.1;
         }
 
         header {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, rgba(0, 123, 255, 0.1) 0%, rgba(255, 255, 255, 0.9) 70%);
-            padding: 4rem 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.2) 0%, rgba(255, 255, 255, 0.9) 70%);
+            padding: 3rem 1rem;
             position: relative;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         header .content {
-            max-width: 1000px;
+            max-width: 800px;
             position: relative;
             z-index: 1;
         }
 
+        .logo {
+            max-width: clamp(180px, 40vw, 240px); /* Logo maior, mas responsiva */
+            margin-bottom: 1.5rem;
+            border-radius: 5%;
+        }
+
         header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4.8rem);
+            font-size: clamp(2rem, 6vw, 3.2rem);
             font-weight: 700;
             color: #007bff;
             margin-bottom: 1rem;
-            text-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+            text-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
         }
 
         header p {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-size: clamp(1rem, 3.5vw, 1.4rem);
             font-weight: 600;
             color: #4a4a4a;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         header .urgency {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
             font-weight: 600;
             color: #ff6200;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         header .urgency i {
-    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-    margin-right: 0.5rem;
-    color: #ff6200;
-}
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-right: 0.5rem;
+            color: #ff6200;
+        }
 
         .cta-primary {
             display: inline-block;
-            background: #ff6200;
+            background: linear-gradient(45deg, #ff6200, #ff8c00);
             color: #ffffff;
-            padding: clamp(1rem, 2vw, 1.6rem) clamp(2rem, 3vw, 3.5rem);
+            padding: clamp(0.8rem, 2.5vw, 1.2rem) clamp(1.5rem, 4vw, 2.5rem);
             text-decoration: none;
-            border-radius: 12px;
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            border-radius: 10px;
+            font-size: clamp(1rem, 3vw, 1.3rem);
             font-weight: 700;
             text-transform: uppercase;
             box-shadow: 0 4px 15px rgba(255, 98, 0, 0.5);
-            animation: pulse 1.5s infinite;
-            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            touch-action: manipulation;
         }
 
         .cta-primary:hover {
-            background: #e63946;
-            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.7);
-            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 98, 0, 0.7);
+            transform: translateY(-2px);
         }
 
         .cta-primary:active {
-            transform: scale(0.95);
+            transform: scale(0.98);
         }
 
         .cta-secondary {
             display: inline-block;
             background: transparent;
             color: #007bff;
-            padding: clamp(0.6rem, 1.5vw, 0.9rem) clamp(1.5rem, 2vw, 2.5rem);
+            padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 3vw, 2rem);
             text-decoration: none;
             border: 2px solid #007bff;
-            border-radius: 10px;
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            border-radius: 8px;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             font-weight: 600;
-            margin-top: 1rem;
-            transition: background 0.3s, color 0.3s, transform 0.2s;
+            margin-top: 0.8rem;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
         }
 
         .cta-secondary:hover {
             background: #007bff;
             color: #ffffff;
-            transform: scale(1.05);
+            transform: translateY(-2px);
         }
 
         .scroll-indicator {
             position: absolute;
-            bottom: 2rem;
+            bottom: 1.5rem;
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
         }
 
         .scroll-indicator i {
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
             color: #007bff;
         }
 
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 0.8rem;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .sticky-nav a {
+            margin: 0 0.8rem;
+            color: #007bff;
+            text-decoration: none;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-weight: 600;
+        }
+
+        .sticky-nav a:hover {
+            color: #ff6200;
+        }
+
         section {
-            padding: clamp(4rem, 5vw, 6rem) clamp(1rem, 2vw, 2rem);
-            max-width: 1280px;
+            padding: clamp(2rem, 5vw, 3rem) clamp(0.8rem, 2vw, 1.5rem);
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            color: #007bff;
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
+            color: #0077cc;
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .why-trust, .problem, .benefits, .offer {
-            background: #f5f5f5;
-            border-radius: 16px;
-            padding: clamp(2.5rem, 4vw, 4rem);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: clamp(1.5rem, 4vw, 2rem);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .problem ul {
             list-style: none;
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             text-align: center;
         }
 
         .problem ul li {
-            margin: 1.2rem 0;
+            margin: 0.8rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .problem ul li i {
-            font-size: clamp(1.2rem, 2vw, 1.4rem);
-            margin-right: 0.6rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-right: 0.5rem;
             color: #007bff;
         }
 
         .why-trust {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
             text-align: center;
         }
 
@@ -196,33 +223,37 @@
         }
 
         .trust-item i {
-            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-size: clamp(1.8rem, 4vw, 2rem);
             color: #007bff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+            transition: transform 0.3s;
+        }
+
+        .trust-item:hover i {
+            transform: scale(1.2);
         }
 
         .trust-item h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
             color: #007bff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .trust-item p {
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
             color: #4a4a4a;
         }
 
         .trust-logos {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
             flex-wrap: wrap;
         }
 
         .trust-logos img {
-            height: clamp(30px, 5vw, 40px);
+            height: clamp(25px, 5vw, 35px);
             filter: grayscale(100%);
             opacity: 0.7;
             transition: opacity 0.3s;
@@ -234,15 +265,15 @@
 
         .solution .packages {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
             justify-items: center;
         }
 
         .package {
             background: #ffffff;
-            border-radius: 16px;
-            padding: clamp(2rem, 3vw, 2.5rem);
+            border-radius: 12px;
+            padding: clamp(1.5rem, 3vw, 2rem);
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -250,110 +281,104 @@
         }
 
         .package.highlighted {
-            border: 3px solid #ff6200;
+            border: 2px solid #ff6200;
             box-shadow: 0 6px 20px rgba(255, 98, 0, 0.3);
-            transform: scale(1.05);
         }
 
         .package.highlighted::before {
             content: 'Mais Escolhido!';
             position: absolute;
-            top: -1.5rem;
+            top: -1rem;
             left: 50%;
             transform: translateX(-50%);
             background: #ff6200;
             color: #ffffff;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
             font-weight: 600;
         }
 
         .package:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
         }
 
         .package h3 {
-            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.6rem, 3.5vw, 1.8rem);
             color: #007bff;
-            font-size: clamp(1.8rem, 3vw, 2rem);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .package ul {
             list-style: none;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .package ul li {
-            margin: 1rem 0;
+            margin: 0.8rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: clamp(1rem, 2vw, 1.1rem);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .package ul li i {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            margin-right: 0.6rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            margin-right: 0.5rem;
             color: #007bff;
         }
 
         .price {
-            font-size: clamp(1.8rem, 3vw, 2rem);
+            font-size: clamp(1.6rem, 3.5vw, 1.8rem);
             font-weight: 700;
             color: #ff6200;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
         }
 
         .cta-button {
             display: inline-block;
             background: #007bff;
             color: #ffffff;
-            padding: clamp(1rem, 2vw, 1.2rem) clamp(2rem, 3vw, 3rem);
+            padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 4vw, 2rem);
             text-decoration: none;
-            border-radius: 10px;
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            border-radius: 8px;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             font-weight: 600;
-            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
         }
 
         .cta-button:hover {
             background: #ff6200;
             box-shadow: 0 4px 15px rgba(255, 98, 0, 0.5);
-            transform: scale(1.05);
-        }
-
-        .cta-button:active {
-            transform: scale(0.95);
+            transform: translateY(-2px);
         }
 
         .process {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
             justify-items: center;
         }
 
         .process-step {
             background: #ffffff;
-            border-radius: 16px;
-            padding: clamp(1.5rem, 2vw, 2rem);
+            border-radius: 12px;
+            padding: clamp(1rem, 3vw, 1.5rem);
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 120px;
+            min-height: 100px;
             width: 100%;
         }
 
         .process-step i {
-            font-size: clamp(1.8rem, 3vw, 2rem);
+            font-size: clamp(1.6rem, 3.5vw, 1.8rem);
             color: #007bff;
             margin-bottom: 0.5rem;
         }
@@ -364,14 +389,14 @@
 
         .benefits {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
 
         .benefit {
             background: #ffffff;
-            border-radius: 16px;
-            padding: clamp(1.5rem, 2vw, 2rem);
+            border-radius: 12px;
+            padding: clamp(1rem, 3vw, 1.5rem);
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
@@ -382,92 +407,79 @@
         }
 
         .benefit i {
-            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-size: clamp(1.8rem, 4vw, 2rem);
             color: #007bff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .benefit p {
-            font-size: clamp(1rem, 2vw, 1.1rem);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             color: #4a4a4a;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .benefit h4 {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(1.1rem, 2vw, 1.2rem);
+            font-size: clamp(1rem, 3vw, 1.1rem);
             color: #007bff;
         }
 
         .offer ul {
             list-style: none;
             text-align: center;
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
         }
 
         .offer ul li {
-            margin: 1.2rem 0;
+            margin: 0.8rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .offer ul li i {
-            font-size: clamp(1.2rem, 2vw, 1.4rem);
-            margin-right: 0.6rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-right: 0.5rem;
             color: #007bff;
         }
 
         .offer .guarantee {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            font-size: clamp(1rem, 3vw, 1.2rem);
             font-weight: 600;
             color: #007bff;
-            margin-top: 2rem;
-        }
-
-        .offer .guarantee i {
-            font-size: clamp(1.3rem, 2vw, 1.5rem);
-            margin-right: 0.6rem;
-            color: #007bff;
-        }
-
-        .offer .security-seal {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .offer .security-seal i {
-            font-size: clamp(2rem, 3vw, 2.5rem);
-            margin-right: 0.6rem;
-            color: #007bff;
-        }
-
-        .offer .urgency {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            font-weight: 600;
-            color: #ff6200;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 1.5rem;
         }
 
-        .offer .urgency i {
-            font-size: clamp(1.2rem, 2vw, 1.4rem);
-            margin-right: 0.6rem;
+        .offer .security-seal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .offer .security-seal i {
+            font-size: clamp(1.8rem, 4vw, 2rem);
+            margin-right: 0.5rem;
+            color: #007bff;
+        }
+
+        .offer .urgency {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 600;
             color: #ff6200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1.2rem;
         }
 
         .final-cta {
             text-align: center;
-            padding: clamp(4rem, 5vw, 6rem) clamp(1rem, 2vw, 2rem);
-            background: #f5f5f5;
-            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+            padding: clamp(2rem, 5vw, 3rem) clamp(0.8rem, 2vw, 1.5rem);
+            background: #f8f9fa;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
             position: relative;
             z-index: 1;
         }
@@ -476,21 +488,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .final-cta .security-seal i {
-            font-size: clamp(2rem, 3vw, 2.5rem);
-            margin-right: 0.6rem;
+            font-size: clamp(1.8rem, 4vw, 2rem);
+            margin-right: 0.5rem;
             color: #007bff;
         }
 
         .whatsapp-fixed {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
             background: #25D366;
-            padding: clamp(1rem, 2vw, 1.2rem);
+            padding: clamp(0.8rem, 2.5vw, 1rem);
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             text-decoration: none;
@@ -498,6 +510,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 100;
         }
 
         .whatsapp-fixed:hover {
@@ -505,39 +518,51 @@
         }
 
         .whatsapp-fixed i {
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             color: #ffffff;
         }
 
-        /* Estilos para Modais */
         .modal {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
+            background: rgba(0, 0, 0, 0.6);
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
         }
 
         .modal-content {
             background: #fff;
-            padding: clamp(1.5rem, 3vw, 2rem);
+            padding: clamp(1rem, 3vw, 1.5rem);
             border-radius: 12px;
-            max-width: clamp(300px, 80vw, 500px);
+            max-width: clamp(280px, 90vw, 400px);
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
         }
 
         .close-modal {
             position: absolute;
             top: 10px;
-            right: 20px;
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            right: 15px;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             cursor: pointer;
             color: #333;
         }
@@ -549,225 +574,213 @@
         #diagnostic-form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         #diagnostic-form input,
         #diagnostic-form textarea {
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+            transition: border-color 0.2s;
+        }
+
+        #diagnostic-form input:focus,
+        #diagnostic-form textarea:focus {
+            border-color: #007bff;
+            outline: none;
         }
 
         #diagnostic-form textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px;
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
+            50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
+            50% { transform: translateY(8px); }
+        }
+
+        @media (min-width: 769px) {
+            .sticky-nav {
+                display: block;
+            }
+
+            header {
+                min-height: 100vh;
+                padding: 4rem 1.5rem;
+            }
+
+            .why-trust {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .solution .packages {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .process {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .benefits {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 3rem 1rem;
-            }
-
-            .why-trust, .problem, .benefits, .offer {
-                padding: 2rem;
-            }
-
-            .solution .packages {
-                grid-template-columns: 1fr;
-            }
-
-            .package {
-                padding: 1.5rem;
-            }
-
-            .package.highlighted {
-                transform: scale(1);
-            }
-
-            .process-step {
-                padding: 1.2rem;
-                min-height: 140px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header .content {
-                padding: 0 0.5rem;
+                padding: 2.5rem 0.8rem;
             }
 
             .cta-primary {
-                padding: 0.8rem 1.5rem;
+                padding: 0.7rem 1.2rem;
+                font-size: clamp(0.9rem, 3vw, 1.1rem);
             }
 
             .cta-secondary {
                 padding: 0.5rem 1rem;
+                font-size: clamp(0.85rem, 2.5vw, 1rem);
             }
 
             .whatsapp-fixed {
-                bottom: 15px;
-                right: 15px;
-                padding: 0.8rem;
+                padding: 0.7rem;
             }
 
             .process-step {
-                min-height: 160px;
+                min-height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: clamp(1.8rem, 6vw, 2.8rem);
+            }
+
+            header p {
+                font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+            }
+
+            .modal-content {
+                max-width: clamp(260px, 95vw, 360px);
+            }
+
+            .logo {
+                max-width: clamp(140px, 35vw, 200px); /* Logo um pouco menor em telas pequenas */
             }
         }
     </style>
 </head>
 <body>
+    <!-- Canvas de fundo com efeito Matrix -->
     <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navegação fixa -->
+    <nav class="sticky-nav">
+        <a href="#why-trust">Por que confiar</a>
+        <a href="#solution">Pacotes</a>
+        <a href="#process">Como funciona</a>
+        <a href="#final-cta">Contato</a>
+    </nav>
+
+    <!-- Cabeçalho principal -->
     <header>
         <div class="content" data-aos="zoom-in" data-aos-duration="600">
+            <img src="logo.png" alt="Alavancagem Digital Logo" class="logo" data-aos="fade-in" data-aos-duration="800">
             <h1>Teu negócio tá sumido no Google? A gente bota no topo em 72h, oxe!</h1>
-            <p>Bora atrair turistas e clientela pra tua loja na Serra da Capivara!</p>
+            <p>Bora atrair turistas e clientelas pra tua loja!</p>
             <p class="urgency">
                 <i class="fas fa-exclamation-circle"></i>
-                Só tem <span id="vacancies">5</span> vagas sobrando, visse?
+                vai perder essa chance?
             </p>
-            <a href="#" class="cta-primary">BORA SER VISTO!</a>
-            <a href="#" class="cta-secondary" data-aos="fade-up" data-aos-delay="200">FALA COM OS CABRA!</a>
+            <a href="#" class="cta-primary" data-modal="info" data-title="Bora transformar teu negócio!" data-desc="Tu tá a um passo de botar teu negócio no topo do Google! Fala com nossa equipe pra um diagnóstico de graça." data-whatsapp="Quero alavancar meu negócio, oxe!">BORA SER VISTO!</a>
+            <a href="#" class="cta-secondary" data-modal="form" data-aos="fade-up" data-aos-delay="200">FALA COM OS CABRA!</a>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
         </div>
     </header>
 
-    <section class="why-trust" data-aos="fade-up" data-aos-duration="600">
-        <h2>Por que a gente é arretado?</h2>
+    <!-- Seção Por que confiar -->
+    <section class="why-trust" id="why-trust" data-aos="fade-up" data-aos-duration="600">
+        <h2>O que voce precisa é:</h2>
         <div class="trust-item" data-aos="zoom-in" data-aos-delay="100">
             <i class="fas fa-map-marker-alt"></i>
             <h3>Visibilidade pros turistas</h3>
-            <p>Teu negócio aparece no Google Maps e nas pesquisas, atraindo visitantes da Serra da Capivara, visse!</p>
+            <p>Teu negócio no <strong>Google Maps </strong>e nas <strong>pesquisas,</strong> atraindo visitantes de todo o <strong>Nordeste!</strong></p>
         </div>
         <div class="trust-item" data-aos="zoom-in" data-aos-delay="200">
             <i class="fas fa-heart"></i>
             <h3>Atendimento de coração</h3>
-            <p>Falamos tua língua, com jeitinho nordestino, e entregamos tudo simples e rápido em até 72h.</p>
+            <p><strong>Falamos tua língua</strong>, com jeitinho nordestino, e entregamos <strong>rápido em até 72h.</strong></p>
         </div>
         <div class="trust-item" data-aos="zoom-in" data-aos-delay="300">
             <i class="fas fa-globe"></i>
             <h3>Negócio online 24/7</h3>
-            <p>Deixa teu negócio disponível na internet o dia todo, pronto pra ser achado por qualquer um!</p>
+            <p>Teu negócio disponível na internet o dia todo, pronto pra ser achado!</p>
         </div>
         <div class="trust-logos" data-aos="fade-up" data-aos-delay="400">
-            <img src="https://via.placeholder.com/100x40?text=Cliente+A" alt="Cliente A">
-            <img src="https://via.placeholder.com/100x40?text=Cliente+B" alt="Cliente B">
-            <img src="https://via.placeholder.com/100x40?text=Cliente+C" alt="Cliente C">
+            <img src="https://via.placeholder.com/100x40?text=Cliente+A" alt="Cliente A" loading="lazy">
+            <img src="https://via.placeholder.com/100x40?text=Cliente+B" alt="Cliente B" loading="lazy">
+            <img src="https://via.placeholder.com/100x40?text=Cliente+C" alt="Cliente C" loading="lazy">
         </div>
     </section>
 
-    <section class="problem" data-aos="fade-up" data-aos-duration="600">
-        <h2>Os perrengues que tu enfrenta</h2>
-        <ul>
-            <li data-aos="fade-right" data-aos-delay="100">
-                <i class="fas fa-search"></i>
-                Clientela não acha teu negócio nem com reza braba?
-            </li>
-            <li data-aos="fade-right" data-aos-delay="200">
-                <i class="fas fa-search"></i>
-                Grandes marcas tão engolindo tua freguesia?
-            </li>
-            <li data-aos="fade-right" data-aos-delay="300">
-                <i class="fas fa-search"></i>
-                Não sobra tempo pra cuidar do Instagram e WhatsApp?
-            </li>
-        </ul>
-        <p style="text-align: center; font-weight: 600; font-size: clamp(1.1rem, 2vw, 1.3rem);" data-aos="fade-up" data-aos-delay="400">
-            Sem digital, teu negócio tá mais parado que água de poço, visse!
-        </p>
-    </section>
-
-    <section class="solution">
-        <h2 data-aos="fade-up" data-aos-duration="600">Nossos pacotes pra tua virada digital</h2>
-        <div class="packages">
-            <div class="package highlighted" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="200">
-                <h3>Pacote Presença Digital</h3>
-                <ul>
-                    <li data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-check"></i>
-                        Site arretado (1 página)
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-check"></i>
-                        Cadastro no Google Meu Negócio
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-check"></i>
-                        Redes sociais turbinadas
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="400">
-                        <i class="fas fa-check"></i>
-                        Entrega em 72h, ligeiro!
-                    </li>
-                </ul>
-                <div class="price">R$ 1.997</div>
-                <a href="#" class="cta-button">BORA COMEÇAR!</a>
-            </div>
-            <div class="package" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200" data-aos-offset="200">
-                <h3>Pacote Alavancagem Total</h3>
-                <ul>
-                    <li data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-check"></i>
-                        Landing Page que vende pra caramba
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-check"></i>
-                        SEO básico pra aparecer no Google
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-check"></i>
-                        Gestão de tráfego (Meta Ads)
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="400">
-                        <i class="fas fa-check"></i>
-                        WhatsApp Business profissional
-                    </li>
-                </ul>
-                <div class="price">R$ 4.997</div>
-                <a href="#" class="cta-button">ALAVANCA TUDO!</a>
-            </div>
-            <div class="package" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400" data-aos-offset="200">
-                <h3>Pacote Domínio Digital</h3>
-                <ul>
-                    <li data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-check"></i>
-                        Site completo (até 5 páginas)
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-check"></i>
-                        SEO avançado pro topo do Google
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-check"></i>
-                        Gestão de redes por 30 dias
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="400">
-                        <i class="fas fa-check"></i>
-                        Relatórios de resultados
-                    </li>
-                </ul>
-                <div class="price">R$ 7.997</div>
-                <a href="#" class="cta-button">DOMINA TUDO!</a>
-            </div>
+   <!-- Seção Pacotes -->
+<!-- Seção Pacotes -->
+<section class="solution" id="solution">
+    <h2 data-aos="fade-up" data-aos-duration="600">Pacotes pra tua virada digital</h2>
+    <div class="packages">
+        <div class="package" data-aos="zoom-in" data-aos-duration="600">
+            <h3>Curioso</h3>
+            <ul>
+                <li data-aos="fade-up" data-aos-delay="100"><i class="fas fa-check"></i>Site básico (1 página)</li>
+                <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-check"></i>Google Meu Negócio</li>
+                <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-times"></i>Gestão de redes sociais</li>
+                <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-times"></i>SEO otimizado</li>
+                <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-times"></i>Gestão de tráfego (Meta Ads)</li>
+            </ul>
+            <div class="price"><s style="color: #444141;font-size: 20px; ">R$ 1.497</s><p></p> R$497</div>
+            <a href="#" class="cta-button" data-modal="info" data-title="Pacote Curioso" data-desc="Site básico (1 página), Google Meu Negócio por apenas R$ 1.497." data-whatsapp="Quero o Pacote Curioso por R$ 1.497!">COMEÇAR AGORA!</a>
         </div>
-    </section>
+        <div class="package highlighted" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+            <h3>Negócio Local</h3>
+            <ul>
+                <li data-aos="fade-up" data-aos-delay="100"><i class="fas fa-check"></i>Site para melhorar vendas</li>
+                <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-check"></i>Google Meu Negócio</li>
+                <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-check"></i>Gestão de redes sociais</li>
+                <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-check"></i>SEO otimizado</li>
+                <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-times"></i>Gestão de tráfego (Meta Ads)</li>
+            </ul>
+            <div class="price"><s style="color: #444141;font-size: 20px; ">R$ 4.997 </s><p></p>R$1.659</div>
+            <a href="#" class="cta-button" data-modal="info" data-title="Pacote Negócio Local" data-desc="Site básico, Google Meu Negócio, gestão de redes, SEO otimizado por R$ 3.497." data-whatsapp="Quero o Pacote Negócio Local por R$ 3.497!">ALAVANCA MEU NEGÓCIO!</a>
+        </div>
+        <div class="package" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+            <h3>Grande Negócio</h3>
+            <ul>
+                <li data-aos="fade-up" data-aos-delay="100"><i class="fas fa-check"></i>Loja online 24 hrs</li>
+                <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-check"></i>Google Meu Negócio</li>
+                <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-check"></i>Gestão de redes sociais</li>
+                <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-check"></i>SEO otimizado</li>
+                <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-check"></i>Gestão de tráfego (Meta Ads)</li>
+            </ul>
+            <div class="price"><s style="color: #444141;font-size: 20px; ">R$ 5.339,80</s><p></p>R$ 2.657</div>
+            <a href="#" class="cta-button" data-modal="info" data-title="Pacote Grande Negócio" data-desc="Site básico, Google Meu Negócio, gestão de redes, SEO otimizado, gestão de tráfego por R$ 5.997." data-whatsapp="Quero o Pacote Grande Negócio por R$ 5.997!">DOMINAR TUDO!</a>
+        </div>
+    </div>
+</section>
 
-    <section class="process">
-        <h2 data-aos="fade-up" data-aos-duration="600">Como a gente bota teu negócio pra cima</h2>
+
+    <!-- Seção Processo -->
+    <section class="process" id="process">
+        <h2 data-aos="fade-up" data-aos-duration="600">Como podemos ajudar o seu Empreendimento?</h2>
         <div class="process-step" data-aos="zoom-in" data-aos-duration="600">
             <i class="fas fa-stethoscope"></i>
             Diagnóstico de graça
@@ -786,48 +799,41 @@
         </div>
     </section>
 
+    <!-- Seção Benefícios -->
     <section class="benefits" data-aos="fade-up" data-aos-duration="600">
-        <h2>O que teu negócio ganha com a gente!</h2>
+        <h2>O que teu negócio ganha!</h2>
         <div class="benefit" data-aos="fade-up" data-aos-delay="100">
             <i class="fas fa-users"></i>
             <h4>Mais freguesia na porta</h4>
-            <p>Teu negócio aparece no Google e nas redes, atraindo clientela nova todo dia, visse!</p>
+            <p>Aparece no Google e redes, atraindo clientela nova todo dia!</p>
         </div>
         <div class="benefit" data-aos="fade-up" data-aos-delay="200">
             <i class="fas fa-rocket"></i>
             <h4>Vendas voando alto</h4>
-            <p>Com site e anúncios bem feitos, tu vende mais sem precisar correr atrás de cliente.</p>
+            <p>Site e anúncios bem feitos, tu vende mais sem correr atrás.</p>
         </div>
         <div class="benefit" data-aos="fade-up" data-aos-delay="300">
             <i class="fas fa-clock"></i>
-            <h4>Tempo pra focar no que importa</h4>
-            <p>A gente cuida do digital, e tu fica livre pra tocar teu negócio sem perrengue!</p>
+            <h4>Tempo pra focar</h4>
+            <p>A gente cuida do digital, tu toca o negócio sem perrengue!</p>
         </div>
     </section>
 
+    <!-- Seção Oferta -->
     <section class="offer" data-aos="fade-up" data-aos-duration="600">
-        <h2>Oferta arretada só pra tu!</h2>
+        <h2>Oferta arretada pra tu!</h2>
         <ul>
-            <li data-aos="fade-right" data-aos-delay="100">
-                <i class="fas fa-gift"></i>
-                Domínio de graça (1 ano)
-            </li>
-            <li data-aos="fade-right" data-aos-delay="200">
-                <i class="fas fa-headset"></i>
-                Suporte todo dia, inclusive domingo
-            </li>
-            <li data-aos="fade-right" data-aos-delay="300">
-                <i class="fas fa-shield-alt"></i>
-                Garantia de satisfação (7 dias)
-            </li>
+            <li data-aos="fade-right" data-aos-delay="100"><i class="fas fa-gift"></i>Domínio de graça (1 ano)</li>
+            <li data-aos="fade-right" data-aos-delay="200"><i class="fas fa-headset"></i>Suporte todo dia</li>
+            <li data-aos="fade-right" data-aos-delay="300"><i class="fas fa-shield-alt"></i>Garantia de satisfação (7 dias)</li>
         </ul>
         <p class="guarantee" data-aos="fade-up" data-aos-delay="400">
             <i class="fas fa-check-circle"></i>
-            7 dias pra testar ou teu dinheiro volta, sem choro!
+            7 dias pra testar ou teu dinheiro volta!
         </p>
         <p class="urgency" data-aos="fade-up" data-aos-delay="500">
             <i class="fas fa-exclamation-circle"></i>
-            Essa oferta é só até hoje, bora correr!
+            Oferta só até hoje, bora correr!
         </p>
         <div class="security-seal" data-aos="fade-up" data-aos-delay="600">
             <i class="fas fa-shield-alt"></i>
@@ -835,22 +841,24 @@
         </div>
     </section>
 
-    <section class="final-cta" data-aos="fade-up" data-aos-duration="600">
-        <h2>Não deixa clientela escapar, oxe!</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Fala com a gente agora e bota teu negócio pra voar em 72h!</p>
-        <a href="#" class="cta-primary" data-aos="fade-up" data-aos-delay="200">ALAVANCA TUDO AGORA!</a>
+    <!-- Call-to-Action Final -->
+    <section class="final-cta" id="final-cta" data-aos="fade-up" data-aos-duration="600">
+        <h2>Não deixa clientela escapar!</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Fala com a gente e bota teu negócio pra voar em 72h!</p>
+        <a href="#" class="cta-primary" data-modal="info" data-title="Bora transformar teu negócio!" data-desc="Tu tá a um passo de botar teu negócio no topo do Google! Fala com nossa equipe pra um diagnóstico de graça." data-whatsapp="Quero alavancar meu negócio, oxe!" data-aos="fade-up" data-aos-delay="200">ALAVANCA AGORA!</a>
         <div class="security-seal" data-aos="fade-up" data-aos-delay="300">
             <i class="fas fa-shield-alt"></i>
             Site seguro, pode confiar!
         </div>
     </section>
 
-    <a href="#" class="whatsapp-fixed" title="Fale com a gente no WhatsApp">
+    <!-- Botão fixo do WhatsApp -->
+    <a href="#" class="whatsapp-fixed" title="Fale no WhatsApp" data-modal="info" data-title="Fala com a gente!" data-desc="Tira tua dúvida com nossos cabra da peste pelo WhatsApp!" data-whatsapp="Oi, tenho uma dúvida sobre os pacotes!">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Modal Informativo -->
-    <div id="info-modal" class="modal" style="display: none;">
+    <!-- Modal de Informações -->
+    <div id="info-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">×</span>
             <h2 id="modal-title"></h2>
@@ -859,16 +867,16 @@
         </div>
     </div>
 
-    <!-- Modal com Formulário de Diagnóstico -->
-    <div id="form-modal" class="modal" style="display: none;">
+    <!-- Modal de Formulário -->
+    <div id="form-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">×</span>
-            <h2>Diagnóstico de graça, visse?</h2>
+            <h2>Diagnóstico de graça!</h2>
             <form id="diagnostic-form">
                 <input type="text" name="name" placeholder="Teu Nome" required>
                 <input type="tel" name="phone" placeholder="Telefone (com DDD)" required>
                 <input type="text" name="business" placeholder="Nome do Negócio" required>
-                <textarea name="challenge" placeholder="Qual o maior perrengue do teu negócio?" required></textarea>
+                <textarea name="challenge" placeholder="Maior perrengue do teu negócio?" required></textarea>
                 <button type="submit" class="cta-button">Enviar e falar no WhatsApp</button>
             </form>
         </div>
@@ -876,137 +884,87 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inicializar AOS
+        // Inicialização do AOS (animações)
         AOS.init({
             duration: 600,
             easing: 'ease-in-out',
             once: true
         });
 
-        // Contador de Vagas Limitadas
-        let vacancies = 5;
-        const vacanciesElement = document.getElementById('vacancies');
-        function updateVacancies() {
-            if (vacancies > 0) {
-                vacancies--;
-                vacanciesElement.textContent = vacancies;
-                if (vacancies === 0) {
-                    document.querySelectorAll('.cta-primary, .cta-button').forEach(btn => {
-                        btn.style.pointerEvents = 'none';
-                        btn.style.opacity = '0.5';
-                    });
-                    vacanciesElement.textContent = 'Esgotado!';
-                }
+        // === Gerenciamento de Modais ===
+        const modals = {
+            info: document.getElementById('info-modal'),
+            form: document.getElementById('form-modal')
+        };
+
+        const modalElements = {
+            info: {
+                title: document.getElementById('modal-title'),
+                description: document.getElementById('modal-description'),
+                whatsapp: document.getElementById('modal-whatsapp')
+            },
+            form: {
+                form: document.getElementById('diagnostic-form')
             }
+        };
+
+        // Função para abrir modal
+        function openModal(modalId, data = {}) {
+            const modal = modals[modalId];
+            if (!modal) return;
+
+            if (modalId === 'info' && data) {
+                modalElements.info.title.textContent = data.title || '';
+                modalElements.info.description.textContent = data.desc || '';
+                modalElements.info.whatsapp.href = `https://wa.me/5511999999999?text=${encodeURIComponent(data.whatsapp || '')}`;
+            }
+
+            modal.classList.add('show');
+            modal.style.display = 'flex';
         }
 
-        // Modal Informativo
-        const infoModal = document.getElementById('info-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDescription = document.getElementById('modal-description');
-        const modalWhatsApp = document.getElementById('modal-whatsapp');
-        const closeInfoModal = document.querySelector('#info-modal .close-modal');
+        // Função para fechar modal
+        function closeModal(modalId) {
+            const modal = modals[modalId];
+            if (!modal) return;
 
-        function openInfoModal(title, description, whatsappLink, whatsappMessage) {
-            modalTitle.textContent = title;
-            modalDescription.textContent = description;
-            modalWhatsApp.href = `${whatsappLink}?text=${encodeURIComponent(whatsappMessage)}`;
-            infoModal.style.display = 'flex';
+            modal.classList.remove('show');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
         }
 
-        closeInfoModal.addEventListener('click', () => {
-            infoModal.style.display = 'none';
+        // Event listeners para botões de fechar
+        document.querySelectorAll('.close-modal').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modalId = btn.closest('.modal').id.split('-')[0];
+                closeModal(modalId);
+            });
         });
 
-        // Modal Formulário de Diagnóstico
-        const formModal = document.getElementById('form-modal');
-        const diagnosticForm = document.getElementById('diagnostic-form');
-        const closeFormModal = document.querySelector('#form-modal .close-modal');
-
-        closeFormModal.addEventListener('click', () => {
-            formModal.style.display = 'none';
+        // Event listeners para botões com data-modal
+        document.querySelectorAll('[data-modal]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modalId = btn.dataset.modal;
+                const modalData = {
+                    title: btn.dataset.title,
+                    desc: btn.dataset.desc,
+                    whatsapp: btn.dataset.whatsapp
+                };
+                openModal(modalId, modalData);
+            });
         });
 
-        diagnosticForm.addEventListener('submit', (e) => {
+        // Envio do formulário
+        modalElements.form.form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const formData = new FormData(diagnosticForm);
+            const formData = new FormData(modalElements.form.form);
             const message = `Diagnóstico Gratuito:\nNome: ${formData.get('name')}\nTelefone: ${formData.get('phone')}\nNegócio: ${formData.get('business')}\nDesafio: ${formData.get('challenge')}`;
             window.location.href = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
-            formModal.style.display = 'none';
-            diagnosticForm.reset();
-            updateVacancies();
+            closeModal('form');
+            modalElements.form.form.reset();
         });
 
-        // Configuração dos Botões
-        // cta-primary
-        document.querySelectorAll('.cta-primary').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                openInfoModal(
-                    'Bora transformar teu negócio!',
-                    'Tu tá a um passo de botar teu negócio no topo do Google, visse! Fala com nossa equipe pra um diagnóstico de graça e descobre o pacote que é a tua cara.',
-                    'https://wa.me/5511999999999',
-                    'Quero alavancar meu negócio, oxe!'
-                );
-            });
-        });
-
-        // cta-secondary
-        document.querySelectorAll('.cta-secondary').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                formModal.style.display = 'flex';
-            });
-        });
-
-        // cta-button (Pacote Presença Digital)
-        document.querySelector('.package:nth-child(1) .cta-button').addEventListener('click', (e) => {
-            e.preventDefault();
-            openInfoModal(
-                'Pacote Presença Digital',
-                'Inclui: Site arretado (1 página), Cadastro no Google Meu Negócio, Redes sociais turbinadas. Entrega em 72h por R$ 1.997.',
-                'https://wa.me/5511999999999',
-                'Quero o Pacote Presença Digital por R$ 1.997!'
-            );
-            updateVacancies();
-        });
-
-        // cta-button (Pacote Alavancagem Total)
-        document.querySelector('.package:nth-child(2) .cta-button').addEventListener('click', (e) => {
-            e.preventDefault();
-            openInfoModal(
-                'Pacote Alavancagem Total',
-                'Inclui: Landing Page que vende pra caramba, SEO básico, Gestão de tráfego (Meta Ads), WhatsApp Business profissional por R$ 4.997.',
-                'https://wa.me/5511999999999',
-                'Quero o Pacote Alavancagem Total por R$ 4.997!'
-            );
-            updateVacancies();
-        });
-
-        // cta-button (Pacote Domínio Digital)
-        document.querySelector('.package:nth-child(3) .cta-button').addEventListener('click', (e) => {
-            e.preventDefault();
-            openInfoModal(
-                'Pacote Domínio Digital',
-                'Inclui: Site completo (até 5 páginas), SEO avançado pro topo do Google, Gestão de redes por 30 dias, Relatórios de resultados por R$ 7.997.',
-                'https://wa.me/5511999999999',
-                'Quero o Pacote Domínio Digital por R$ 7.997!'
-            );
-            updateVacancies();
-        });
-
-        // whatsapp-fixed
-        document.querySelector('.whatsapp-fixed').addEventListener('click', (e) => {
-            e.preventDefault();
-            openInfoModal(
-                'Fala com a gente!',
-                'Tira tua dúvida com nossos cabra da peste pelo WhatsApp, visse.',
-                'https://wa.me/5511999999999',
-                'Oi, tenho uma dúvida sobre os pacotes!'
-            );
-        });
-
-        // Efeito de números caindo (Matrix)
+        // === Animação do Canvas (Matrix) ===
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -1018,13 +976,12 @@
         window.addEventListener('resize', resizeCanvas);
 
         const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const fontSize = 14;
+        const fontSize = 12;
         const columns = Math.floor(canvas.width / fontSize);
         const drops = Array(columns).fill(0);
         const isMobile = window.innerWidth <= 768;
-        const maxDrops = isMobile ? columns * 0.5 : columns;
+        const maxDrops = isMobile ? Math.floor(columns * 0.4) : columns;
 
-        let baseSpeed = isMobile ? 30 : 50;
         let scrollSpeedFactor = 0;
 
         function draw() {
@@ -1041,11 +998,11 @@
 
                 ctx.fillText(text, x, y);
 
-                if (y > canvas.height && Math.random() > 0.975) {
+                if (y > canvas.height && Math.random() > 0.98) {
                     drops[i] = 0;
                 }
 
-                drops[i] += 1 + scrollSpeedFactor;
+                drops[i] += 0.5 + scrollSpeedFactor;
             }
 
             requestAnimationFrame(draw);
@@ -1055,7 +1012,7 @@
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
             const scrollDelta = Math.abs(scrollY - lastScrollY);
-            scrollSpeedFactor = Math.min(scrollDelta / 100, 2);
+            scrollSpeedFactor = Math.min(scrollDelta / 150, 1.5);
             lastScrollY = scrollY;
         });
 
