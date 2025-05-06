@@ -53,7 +53,7 @@
         }
 
         .logo {
-            max-width: clamp(180px, 40vw, 240px); /* Logo maior, mas responsiva */
+            max-width: clamp(180px, 40vw, 240px);
             margin-bottom: 1.5rem;
             border-radius: 5%;
         }
@@ -151,19 +151,21 @@
             top: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
-            padding: 0.8rem;
+            padding: 1rem;
             text-align: center;
             z-index: 10;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
         }
 
         .sticky-nav a {
-            margin: 0 0.8rem;
             color: #007bff;
             text-decoration: none;
             font-size: clamp(0.9rem, 2.5vw, 1rem);
             font-weight: 600;
+            transition: color 0.2s;
         }
 
         .sticky-nav a:hover {
@@ -171,8 +173,8 @@
         }
 
         section {
-            padding: clamp(2rem, 5vw, 3rem) clamp(0.8rem, 2vw, 1.5rem);
-            max-width: 1000px;
+            padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 3rem);
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -180,13 +182,21 @@
             font-size: clamp(1.8rem, 5vw, 2.4rem);
             color: #0077cc;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
+            color: #0077cc;
+            text-align: center;
+            margin-bottom: 3rem;
+            width: 100%;
         }
 
         .why-trust, .problem, .benefits, .offer {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: clamp(1.5rem, 4vw, 2rem);
+            padding: clamp(2rem, 5vw, 3rem);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
@@ -210,22 +220,39 @@
         }
 
         .why-trust {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .trust-items {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
-            text-align: center;
+            gap: 2rem;
+            width: 100%;
         }
 
         .trust-item {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 1.5rem;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .trust-item i {
-            font-size: clamp(1.8rem, 4vw, 2rem);
+            font-size: clamp(2rem, 4vw, 2.5rem);
             color: #007bff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             transition: transform 0.3s;
         }
 
@@ -236,53 +263,58 @@
         .trust-item h3 {
             font-size: clamp(1.2rem, 3vw, 1.4rem);
             color: #007bff;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.8rem;
         }
 
         .trust-item p {
-            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             color: #4a4a4a;
         }
 
         .trust-logos {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 2rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
+            width: 100%;
         }
 
         .trust-logos img {
-            height: clamp(25px, 5vw, 35px);
+            height: clamp(30px, 5vw, 40px);
             filter: grayscale(100%);
             opacity: 0.7;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s, filter 0.3s;
         }
 
         .trust-logos img:hover {
             opacity: 1;
+            filter: grayscale(0%);
         }
 
         .solution .packages {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: 2rem;
             justify-items: center;
         }
 
         .package {
             background: #ffffff;
             border-radius: 12px;
-            padding: clamp(1.5rem, 3vw, 2rem);
+            padding: clamp(2rem, 5vw, 2.5rem);
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
+            width: 100%;
+            max-width: 350px;
         }
 
         .package.highlighted {
             border: 2px solid #ff6200;
             box-shadow: 0 6px 20px rgba(255, 98, 0, 0.3);
+            transform: scale(1.05);
         }
 
         .package.highlighted::before {
@@ -301,22 +333,26 @@
 
         .package:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+        }
+
+        .package.highlighted:hover {
+            transform: translateY(-5px) scale(1.05);
         }
 
         .package h3 {
             font-size: clamp(1.6rem, 3.5vw, 1.8rem);
             color: #007bff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
         }
 
         .package ul {
             list-style: none;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .package ul li {
-            margin: 0.8rem 0;
+            margin: 1rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -333,7 +369,14 @@
             font-size: clamp(1.6rem, 3.5vw, 1.8rem);
             font-weight: 700;
             color: #ff6200;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+        }
+
+        .price s {
+            color: #444141;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .cta-button {
@@ -355,61 +398,78 @@
         }
 
         .process {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .process-items {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: 2rem;
+            width: 100%;
             justify-items: center;
         }
 
         .process-step {
             background: #ffffff;
             border-radius: 12px;
-            padding: clamp(1rem, 3vw, 1.5rem);
+            padding: clamp(1.5rem, 4vw, 2rem);
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100px;
+            min-height: 120px;
             width: 100%;
+            max-width: 250px;
         }
 
         .process-step i {
-            font-size: clamp(1.6rem, 3.5vw, 1.8rem);
+            font-size: clamp(2rem, 4vw, 2.5rem);
             color: #007bff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .process-step:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
         }
 
         .benefits {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .benefits-items {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: 2rem;
+            width: 100%;
         }
 
         .benefit {
             background: #ffffff;
             border-radius: 12px;
-            padding: clamp(1rem, 3vw, 1.5rem);
+            padding: clamp(1.5rem, 4vw, 2rem);
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .benefit:hover {
             transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
         }
 
         .benefit i {
-            font-size: clamp(1.8rem, 4vw, 2rem);
+            font-size: clamp(2rem, 4vw, 2.5rem);
             color: #007bff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .benefit p {
@@ -419,106 +479,132 @@
         }
 
         .benefit h4 {
-            font-size: clamp(1rem, 3vw, 1.1rem);
+            font-size: clamp(1.2rem, 3vw, 1.3rem);
             color: #007bff;
+            margin-bottom: 0.8rem;
+        }
+
+        .offer {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .offer ul {
             list-style: none;
             text-align: center;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin: 2rem 0;
         }
 
         .offer ul li {
-            margin: 0.8rem 0;
+            margin: 1rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .offer ul li i {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            margin-right: 0.5rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+            margin-right: 0.8rem;
             color: #007bff;
         }
 
         .offer .guarantee {
-            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             font-weight: 600;
             color: #007bff;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .offer .guarantee i {
+            font-size: clamp(1.3rem, 3vw, 1.5rem);
+            margin-right: 0.8rem;
         }
 
         .offer .security-seal {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
         }
 
         .offer .security-seal i {
             font-size: clamp(1.8rem, 4vw, 2rem);
-            margin-right: 0.5rem;
+            margin-right: 0.8rem;
             color: #007bff;
         }
 
         .offer .urgency {
-            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             font-weight: 600;
             color: #ff6200;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .offer .urgency i {
+            font-size: clamp(1.3rem, 3vw, 1.5rem);
+            margin-right: 0.8rem;
         }
 
         .final-cta {
             text-align: center;
-            padding: clamp(2rem, 5vw, 3rem) clamp(0.8rem, 2vw, 1.5rem);
+            padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 3rem);
             background: #f8f9fa;
             box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
             position: relative;
             z-index: 1;
         }
 
+        .final-cta p {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            margin-bottom: 2rem;
+        }
+
         .final-cta .security-seal {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
         }
 
         .final-cta .security-seal i {
             font-size: clamp(1.8rem, 4vw, 2rem);
-            margin-right: 0.5rem;
+            margin-right: 0.8rem;
             color: #007bff;
         }
 
         .whatsapp-fixed {
             position: fixed;
-            bottom: 15px;
-            right: 15px;
+            bottom: 25px;
+            right: 25px;
             background: #25D366;
-            padding: clamp(0.8rem, 2.5vw, 1rem);
+            padding: clamp(1rem, 2.5vw, 1.2rem);
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             text-decoration: none;
             animation: pulse 2s infinite;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 100;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .whatsapp-fixed:hover {
-            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.7);
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.7);
         }
 
         .whatsapp-fixed i {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
             color: #ffffff;
         }
 
@@ -544,11 +630,11 @@
 
         .modal-content {
             background: #fff;
-            padding: clamp(1rem, 3vw, 1.5rem);
+            padding: clamp(2rem, 5vw, 2.5rem);
             border-radius: 12px;
-            max-width: clamp(280px, 90vw, 400px);
+            max-width: clamp(320px, 90vw, 450px);
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
             position: relative;
             transform: scale(0.8);
             transition: transform 0.3s ease;
@@ -560,29 +646,41 @@
 
         .close-modal {
             position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            top: 15px;
+            right: 20px;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
             cursor: pointer;
             color: #333;
+            transition: color 0.2s;
         }
 
         .close-modal:hover {
             color: #ff6200;
         }
 
+        #modal-title {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        #modal-description {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin-bottom: 1.5rem;
+        }
+
         #diagnostic-form {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
+            gap: 1rem;
         }
 
         #diagnostic-form input,
         #diagnostic-form textarea {
-            padding: 0.7rem;
+            padding: 0.8rem;
             border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+            border-radius: 8px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             transition: border-color 0.2s;
         }
 
@@ -590,11 +688,16 @@
         #diagnostic-form textarea:focus {
             border-color: #007bff;
             outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
         }
 
         #diagnostic-form textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 100px;
+        }
+
+        #diagnostic-form button {
+            margin-top: 0.5rem;
         }
 
         @keyframes pulse {
@@ -608,57 +711,108 @@
             50% { transform: translateY(8px); }
         }
 
+        /* Desktop Styles */
         @media (min-width: 769px) {
             .sticky-nav {
-                display: block;
+                padding: 1rem 2rem;
+                justify-content: center;
+                gap: 3rem;
             }
 
             header {
                 min-height: 100vh;
-                padding: 4rem 1.5rem;
+                padding: 4rem 2rem;
             }
 
-            .why-trust {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            header .content {
+                max-width: 900px;
+            }
+
+            .logo {
+                max-width: 220px;
+            }
+
+            .trust-items {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem;
+            }
+
+            .solution .packages {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .package {
+                max-width: none;
+            }
+
+            .process-items {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+
+            .process-step {
+                max-width: none;
+            }
+
+            .benefits-items {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .offer ul {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+
+            .offer ul li {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+                background: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s;
+                height: 100%;
+            }
+
+            .offer ul li:hover {
+                transform: translateY(-5px);
+            }
+
+            .offer ul li i {
+                font-size: 2rem;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .trust-items {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .solution .packages {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
 
-            .process {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            .process-items {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .benefits {
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            .benefits-items {
+                grid-template-columns: repeat(2, 1fr);
             }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 2.5rem 0.8rem;
-            }
-
-            .cta-primary {
-                padding: 0.7rem 1.2rem;
-                font-size: clamp(0.9rem, 3vw, 1.1rem);
-            }
-
-            .cta-secondary {
-                padding: 0.5rem 1rem;
-                font-size: clamp(0.85rem, 2.5vw, 1rem);
-            }
-
-            .whatsapp-fixed {
-                padding: 0.7rem;
-            }
-
-            .process-step {
-                min-height: 120px;
+            
+            /* Esconder o menu na versão tablet */
+            .sticky-nav {
+                display: none;
             }
         }
 
+        /* Mobile Styles */
         @media (max-width: 480px) {
             header h1 {
                 font-size: clamp(1.8rem, 6vw, 2.8rem);
@@ -673,7 +827,24 @@
             }
 
             .logo {
-                max-width: clamp(140px, 35vw, 200px); /* Logo um pouco menor em telas pequenas */
+                max-width: clamp(140px, 35vw, 200px);
+            }
+
+            .package {
+                padding: 1.5rem;
+            }
+
+            .package ul li {
+                margin: 0.6rem 0;
+            }
+
+            .process-step {
+                min-height: 100px;
+            }
+            
+            /* Esconder o menu na versão mobile */
+            .sticky-nav {
+                display: none;
             }
         }
     </style>
@@ -694,7 +865,7 @@
     <header>
         <div class="content" data-aos="zoom-in" data-aos-duration="600">
             <img src="https://i.postimg.cc/vZJJGDZ4/logo.png" alt="Alavancagem Digital Logo" class="logo" data-aos="fade-in" data-aos-duration="800">
-            <h1>Seu negócio num tá no Google? Então ninguém vai encontrar você!</h1>
+            <h1>Seu negócio num tá do Google? Então ninguém vai encontrar você!</h1>
             <p>Em até 72 horas, a Eita Devis coloca seu negócio na internet, aparece no Google e atrai mais clientes — sem enrolação, sem complicação!</p>
              <p class="urgency">
                 <i class="fas fa-exclamation-circle"></i>
@@ -710,21 +881,23 @@
 
     <!-- Seção Por que confiar -->
     <section class="why-trust" id="why-trust" data-aos="fade-up" data-aos-duration="600">
-        <h2>O que voce precisa é:</h2>
-        <div class="trust-item" data-aos="zoom-in" data-aos-delay="100">
-            <i class="fas fa-map-marker-alt"></i>
-            <h3>Visibilidade pros turistas</h3>
-            <p>Teu negócio no <strong>Google Maps </strong>e nas <strong>pesquisas,</strong> atraindo visitantes de todo o <strong>Nordeste!</strong></p>
-        </div>
-        <div class="trust-item" data-aos="zoom-in" data-aos-delay="200">
-            <i class="fas fa-heart"></i>
-            <h3>Atendimento de coração</h3>
-            <p><strong>Falamos tua língua</strong>, com jeitinho nordestino, e entregamos <strong>rápido em até 72h.</strong></p>
-        </div>
-        <div class="trust-item" data-aos="zoom-in" data-aos-delay="300">
-            <i class="fas fa-globe"></i>
-            <h3>Negócio online 24/7</h3>
-            <p>Teu negócio disponível na internet o dia todo, pronto pra ser achado!</p>
+        <h2 class="section-title">O que voce precisa é:</h2>
+        <div class="trust-items">
+            <div class="trust-item" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Visibilidade pros turistas</h3>
+                <p>Teu negócio no <strong>Google Maps </strong>e nas <strong>pesquisas,</strong> atraindo visitantes de todo o <strong>Nordeste!</strong></p>
+            </div>
+            <div class="trust-item" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-heart"></i>
+                <h3>Atendimento de coração</h3>
+                <p><strong>Falamos tua língua</strong>, com jeitinho nordestino, e entregamos <strong>rápido em até 72h.</strong></p>
+            </div>
+            <div class="trust-item" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-globe"></i>
+                <h3>Negócio online 24/7</h3>
+                <p>Teu negócio disponível na internet o dia todo, pronto pra ser achado!</p>
+            </div>
         </div>
         <div class="trust-logos" data-aos="fade-up" data-aos-delay="400">
             <img src="https://via.placeholder.com/100x40?text=Cliente+A" alt="Cliente A" loading="lazy">
@@ -733,89 +906,91 @@
         </div>
     </section>
 
-   <!-- Seção Pacotes -->
-<!-- Seção Pacotes -->
-<section class="solution" id="solution">
-    <h2 data-aos="fade-up" data-aos-duration="600">Pacotes pra tua virada digital</h2>
-    <div class="packages">
-        <div class="package" data-aos="zoom-in" data-aos-duration="600">
-            <h3>Curioso</h3>
-            <ul>
-                <li data-aos="fade-up" data-aos-delay="100"><i class="fas fa-check"></i>Site básico (1 página)</li>
-                <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-check"></i>Google Meu Negócio</li>
-                <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-times"></i>Gestão de redes sociais</li>
-                <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-times"></i>SEO otimizado</li>
-                <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-times"></i>Gestão de tráfego (Meta Ads)</li>
-            </ul>
-            <div class="price"><s style="color: #444141;font-size: 20px; ">R$ 1.497</s><p></p> R$497</div>
-            <a href="#" class="cta-button" data-modal="info" data-title="Pacote Curioso" data-desc="Site básico (1 página), Google Meu Negócio por apenas R$ 1.497." data-whatsapp="Quero o Pacote Curioso por R$ 1.497!">COMEÇAR AGORA!</a>
+    <!-- Seção Pacotes -->
+    <section class="solution" id="solution">
+        <h2 data-aos="fade-up" data-aos-duration="600">Pacotes pra tua virada digital</h2>
+        <div class="packages">
+            <div class="package" data-aos="zoom-in" data-aos-duration="600">
+                <h3>Curioso</h3>
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100"><i class="fas fa-check"></i>Site básico (1 página)</li>
+                    <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-check"></i>Google Meu Negócio</li>
+                    <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-times"></i>Gestão de redes sociais</li>
+                    <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-times"></i>SEO otimizado</li>
+                    <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-times"></i>Gestão de tráfego (Meta Ads)</li>
+                </ul>
+                <div class="price"><s>R$ 1.497</s> R$497</div>
+                <a href="#" class="cta-button" data-modal="info" data-title="Pacote Curioso" data-desc="Site básico (1 página), Google Meu Negócio por apenas R$ 497." data-whatsapp="Quero o Pacote Curioso por R$ 497!">COMEÇAR AGORA!</a>
+            </div>
+            <div class="package highlighted" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+                <h3>Negócio Local</h3>
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100"><i class="fas fa-check"></i>Site para melhorar vendas</li>
+                    <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-check"></i>Google Meu Negócio</li>
+                    <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-check"></i>Gestão de redes sociais</li>
+                    <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-check"></i>SEO otimizado</li>
+                    <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-times"></i>Gestão de tráfego (Meta Ads)</li>
+                </ul>
+                <div class="price"><s>R$ 4.997</s> R$1.659</div>
+                <a href="#" class="cta-button" data-modal="info" data-title="Pacote Negócio Local" data-desc="Site básico, Google Meu Negócio, gestão de redes, SEO otimizado por R$ 1.659." data-whatsapp="Quero o Pacote Negócio Local por R$ 1.659!">ALAVANCA MEU NEGÓCIO!</a>
+            </div>
+            <div class="package" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+                <h3>Grande Negócio</h3>
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100"><i class="fas fa-check"></i>Loja online 24 hrs</li>
+                    <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-check"></i>Google Meu Negócio</li>
+                    <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-check"></i>Gestão de redes sociais</li>
+                    <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-check"></i>SEO otimizado</li>
+                    <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-check"></i>Gestão de tráfego (Meta Ads)</li>
+                </ul>
+                <div class="price"><s>R$ 5.339,80</s> R$ 2.657</div>
+                <a href="#" class="cta-button" data-modal="info" data-title="Pacote Grande Negócio" data-desc="Site básico, Google Meu Negócio, gestão de redes, SEO otimizado, gestão de tráfego por R$ 2.657." data-whatsapp="Quero o Pacote Grande Negócio por R$ 2.657!">DOMINAR TUDO!</a>
+            </div>
         </div>
-        <div class="package highlighted" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
-            <h3>Negócio Local</h3>
-            <ul>
-                <li data-aos="fade-up" data-aos-delay="100"><i class="fas fa-check"></i>Site para melhorar vendas</li>
-                <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-check"></i>Google Meu Negócio</li>
-                <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-check"></i>Gestão de redes sociais</li>
-                <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-check"></i>SEO otimizado</li>
-                <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-times"></i>Gestão de tráfego (Meta Ads)</li>
-            </ul>
-            <div class="price"><s style="color: #444141;font-size: 20px; ">R$ 4.997 </s><p></p>R$1.659</div>
-            <a href="#" class="cta-button" data-modal="info" data-title="Pacote Negócio Local" data-desc="Site básico, Google Meu Negócio, gestão de redes, SEO otimizado por R$ 3.497." data-whatsapp="Quero o Pacote Negócio Local por R$ 3.497!">ALAVANCA MEU NEGÓCIO!</a>
-        </div>
-        <div class="package" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
-            <h3>Grande Negócio</h3>
-            <ul>
-                <li data-aos="fade-up" data-aos-delay="100"><i class="fas fa-check"></i>Loja online 24 hrs</li>
-                <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-check"></i>Google Meu Negócio</li>
-                <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-check"></i>Gestão de redes sociais</li>
-                <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-check"></i>SEO otimizado</li>
-                <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-check"></i>Gestão de tráfego (Meta Ads)</li>
-            </ul>
-            <div class="price"><s style="color: #444141;font-size: 20px; ">R$ 5.339,80</s><p></p>R$ 2.657</div>
-            <a href="#" class="cta-button" data-modal="info" data-title="Pacote Grande Negócio" data-desc="Site básico, Google Meu Negócio, gestão de redes, SEO otimizado, gestão de tráfego por R$ 5.997." data-whatsapp="Quero o Pacote Grande Negócio por R$ 5.997!">DOMINAR TUDO!</a>
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Seção Processo -->
     <section class="process" id="process">
-        <h2 data-aos="fade-up" data-aos-duration="600">Como podemos ajudar o seu Empreendimento?</h2>
-        <div class="process-step" data-aos="zoom-in" data-aos-duration="600">
-            <i class="fas fa-stethoscope"></i>
-            Diagnóstico de graça
-        </div>
-        <div class="process-step" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
-            <i class="fas fa-laptop-code"></i>
-            Desenvolvimento ligeiro
-        </div>
-        <div class="process-step" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
-            <i class="fas fa-chalkboard-teacher"></i>
-            Treinamento na medida
-        </div>
-        <div class="process-step" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
-            <i class="fas fa-trophy"></i>
-            Resultados que impressionam
+        <h2 class="section-title" data-aos="fade-up" data-aos-duration="600">Como podemos ajudar o seu Empreendimento?</h2>
+        <div class="process-items">
+            <div class="process-step" data-aos="zoom-in" data-aos-duration="600">
+                <i class="fas fa-stethoscope"></i>
+                Diagnóstico de graça
+            </div>
+            <div class="process-step" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+                <i class="fas fa-laptop-code"></i>
+                Desenvolvimento ligeiro
+            </div>
+            <div class="process-step" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+                <i class="fas fa-chalkboard-teacher"></i>
+                Treinamento na medida
+            </div>
+            <div class="process-step" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+                <i class="fas fa-trophy"></i>
+                Resultados que impressionam
+            </div>
         </div>
     </section>
 
     <!-- Seção Benefícios -->
     <section class="benefits" data-aos="fade-up" data-aos-duration="600">
-        <h2>O que teu negócio ganha!</h2>
-        <div class="benefit" data-aos="fade-up" data-aos-delay="100">
-            <i class="fas fa-users"></i>
-            <h4>Mais freguesia na porta</h4>
-            <p>Aparece no Google e redes, atraindo clientela nova todo dia!</p>
-        </div>
-        <div class="benefit" data-aos="fade-up" data-aos-delay="200">
-            <i class="fas fa-rocket"></i>
-            <h4>Vendas voando alto</h4>
-            <p>Site e anúncios bem feitos, tu vende mais sem correr atrás.</p>
-        </div>
-        <div class="benefit" data-aos="fade-up" data-aos-delay="300">
-            <i class="fas fa-clock"></i>
-            <h4>Tempo pra focar</h4>
-            <p>A gente cuida do digital, tu toca o negócio sem perrengue!</p>
+        <h2 class="section-title">O que teu negócio ganha!</h2>
+        <div class="benefits-items">
+            <div class="benefit" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-users"></i>
+                <h4>Mais freguesia na porta</h4>
+                <p>Aparece no Google e redes, atraindo clientela nova todo dia!</p>
+            </div>
+            <div class="benefit" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-rocket"></i>
+                <h4>Vendas voando alto</h4>
+                <p>Site e anúncios bem feitos, tu vende mais sem correr atrás.</p>
+            </div>
+            <div class="benefit" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-clock"></i>
+                <h4>Tempo pra focar</h4>
+                <p>A gente cuida do digital, tu toca o negócio sem perrengue!</p>
+            </div>
         </div>
     </section>
 
